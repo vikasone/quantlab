@@ -1,0 +1,17 @@
+In my current implementation of the problem in question, I tried to
+
+1) Encapsulate the calculation logic in calculator objects
+2) Encapsulate the Trade data in a custom data structure TradeDataStore
+3) Encapsulate the trade file reading
+3) For now imtegrated the unit test in the main flow, with an argv option. Given more time I'll split the unit test in a seperate flow, and add unit test for each of the functionality pieces
+4) Implemented a basic data dtructure for the trade data storage. 
+   For future design to process large amount of trades, I'll use following data structure
+   a map of <First symbol character, Trade data map as above>
+   map<char, map<char, TradeData>> m_tradeDataStore;
+   This will cut down latency in symbol searches, when the number of symbols can grow higher
+5) I spent around 3-4 hours in this implementation
+
+Instructions:
+1)Run "make all" - to build
+2)Run in unit test mode - ./build/apps/tradecalculator test
+2)Run in live mode - ./build/apps/tradecalculator
